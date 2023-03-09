@@ -3,9 +3,6 @@
 import 'package:flutter/material.dart';
 import '../models/transaction.dart';
 import 'package:intl/intl.dart';
-import './user_transaction.dart';
-
-
 
 
 class TransactionList extends StatelessWidget {
@@ -14,8 +11,20 @@ class TransactionList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(children: 
-                
+    
+    return _transactions.isEmpty?Container(
+      child: Column(
+        
+        children: [
+          Text("No Transactions Yet"),
+          SizedBox(height: 40),
+          Container(
+            height:200,
+            child: Image.asset('assets/waiting.png',fit: BoxFit.cover)),
+        ],
+      ),
+    ):
+     Column(children:
                 _transactions.map((tnx){
                  //return Card(child: Text(tnx.title),);
                  return ListTile(title:Text
