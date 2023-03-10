@@ -27,13 +27,13 @@ class _MyHomepageState extends State<MyHomepage>
     Transaction(id:'t1', title: 'Shoes', amount:6999,date:DateTime.now()),
     Transaction(id:'t2', title: 'Dress', amount:2000,date:DateTime.now()),
   ];
-   void _addNewtransaction( String txtitle, double txamount)
+   void _addNewtransaction( String txtitle, double txamount, DateTime chosendate)
    {
        final newTx =Transaction
        (
           title:txtitle,
           amount:txamount,
-          date:DateTime.now(),
+          date:chosendate,
           id:DateTime.now().toString(),
 
        );

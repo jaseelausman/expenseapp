@@ -46,7 +46,10 @@ class TransactionList extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     color: Colors.purple,
                     fontSize: 20))
-                   )
+                   ),
+                   trailing: IconButton(icon: Icon(Icons.delete),
+                   color: Colors.red,
+                   onPressed: (){},),
                     );
                 }).toList(), 
     );
