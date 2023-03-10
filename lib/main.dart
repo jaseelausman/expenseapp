@@ -42,6 +42,15 @@ class _MyHomepageState extends State<MyHomepage>
     _userTransactions.add(newTx);
    }
    );}
+ 
+   void _deleteTransaction(String id)
+   {    
+
+       setState(() {
+         _userTransactions.removeWhere((tx) => tx.id== id);
+       });
+      
+   }
 
  void _startAddNewTransaction(BuildContext cntx){
   showModalBottomSheet(context: cntx, builder: (_){
@@ -67,7 +76,7 @@ class _MyHomepageState extends State<MyHomepage>
                 child: const Card(child: Center(child: Text("CHART")),
                 ),
             ),
-              TransactionList(_userTransactions),
+              TransactionList(_userTransactions,_deleteTransaction),
           ],
         ),
       ),
